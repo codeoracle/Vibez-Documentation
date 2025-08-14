@@ -1,0 +1,121 @@
+export const metadata = {
+  title: 'Connect AWS Account',
+  description:
+    'In this guide, we will look at how to Connect AWS Account.',
+}
+
+
+# Connect AWS Account
+
+Deploy your Appmint Vibe Studio application to your own AWS account through Appmint Vibe Studio Cloud {{ className: 'lead' }}
+
+Connect your AWS account to Appmint Vibe Studio Cloud to deploy your Appmint Vibe Studio application directly to your own AWS infrastructure.
+ This gives you full data sovereignty while leveraging Appmint Vibe Studio’s deployment automation. {{ className: 'lead' }}
+
+## Prerequisites
+
+1. **AWS Account Access** {{ className: 'lead' }}
+    - Active AWS account with appropriate permissions {{ className: 'lead' }}
+    - Ability to create IAM roles in your AWS account {{ className: 'lead' }}
+    - Understanding of which AWS region you want to deploy to {{ className: 'lead' }}
+2. **Appmint Vibe Studio Application Ready** {{ className: 'lead' }}
+    - Your application built and tested with Appmint Vibe Studio {{ className: 'lead' }}
+    - Preview environment validated and working {{ className: 'lead' }}
+    - Ready to deploy to production infrastructure {{ className: 'lead' }}
+
+## Connection Process
+
+1. **Access the Connect Cloud page** {{ className: 'lead' }}
+
+[In your Appmint Vibe Studio project:](#)
+    - Go to the Appmint Vibe Studio Cloud dashboard {{ className: 'lead' }}
+    - Select your application {{ className: 'lead' }}
+    - Navigate to App Settings → Integrations → Connect Cloud {{ className: 'lead' }}
+    - Select Amazon Web Services (AWS) {{ className: 'lead' }}
+2. **Create IAM Role in AWS** {{ className: 'lead' }}
+
+[Follow the detailed instructions provided on the Connect Cloud page to:](#)
+    - Create a new IAM Role in your AWS account {{ className: 'lead' }}
+    - Configure the trust relationship with Appmint Vibe Studio Cloud {{ className: 'lead' }}
+    - Attach the necessary permissions for infrastructure provisioning
+    - Security requirement: Make sure to check “Require external ID” and specify the external ID provided in the Appmint Vibe Studio Cloud instructions. This is critical for security. {{ className: 'lead' }}
+3. **Connect the Role**{{ className: 'lead' }}
+
+[Back in Appmint Vibe Studio Cloud:](#)
+    - Enter the ARN of the IAM role you created {{ className: 'lead' }}
+    - Verify the external ID matches what you configured {{ className: 'lead' }}
+    - Test the connection to ensure Appmint Vibe Studio can assume the role {{ className: 'lead' }}
+4. **Choose Deployment Region** {{ className: 'lead' }}
+
+[Select which AWS region you want Appmint Vibe Studio Cloud to provision resources in:](#)
+    - Consider latency to your users {{ className: 'lead' }}
+    - Review AWS region capabilities and compliance requirements {{ className: 'lead' }}
+    - Factor in your existing AWS infrastructure locationLearn more about AWS regions {{ className: 'lead' }}
+
+## What Gets Deployed
+
+When you deploy to your AWS account through Appmint Vibe Studio Cloud, the following infrastructure is automatically provisioned: {{ className: 'lead' }}
+
+- **Compute Resources** {{ className: 'lead' }}
+- **Database Infrastructure** {{ className: 'lead' }}
+- **Networking & Security** {{ className: 'lead' }}
+- **Monitoring & Logging** {{ className: 'lead' }}
+
+### IAM Permissions
+
+The IAM role you create needs appropriate permissions to provision and manage infrastructure in your AWS account. 
+The exact permissions required will be specified in the Connect Cloud setup instructions, but typically include: {{ className: 'lead' }}
+
+- **Core Services** {{ className: 'lead' }}
+- **Security & Management** {{ className: 'lead' }}
+- **Security Best Practices** {{ className: 'lead' }}
+- Essential AWS services for application deployment {{ className: 'lead' }}
+    - Compute: ECS, Fargate, or EC2 for running your application {{ className: 'lead' }}
+    - Database: RDS for managed database services {{ className: 'lead' }}
+    - Networking: VPC, subnets, security groups, and load balancers {{ className: 'lead' }}
+    - Storage: S3 for application assets and backups {{ className: 'lead' }}
+
+## Managing Your Deployment
+
+- **Appmint Vibe Studio Cloud Dashboard** {{ className: 'lead' }}
+    - Monitor and manage through Appmint Vibe Studio {{ className: 'lead' }}
+    - View application performance and health {{ className: 'lead' }}
+    - Access logs and distributed tracing {{ className: 'lead' }}
+    - Manage deployments and rollbacks {{ className: 'lead' }}
+    - Configure environments and settings {{ className: 'lead' }}
+- **AWS Console** {{ className: 'lead' }}
+    - Direct access to your infrastructure {{ className: 'lead' }}
+    - View and manage AWS resources directly {{ className: 'lead' }}
+    - Access detailed CloudWatch metrics {{ className: 'lead' }}
+    - Configure additional AWS services {{ className: 'lead' }}
+    - Manage billing and cost optimization {{ className: 'lead' }}
+
+### Important Considerations
+
+- **Resource Management** {{ className: 'lead' }}
+- **Cost Management** {{ className: 'lead' }}
+- **Security & Compliance** {{ className: 'lead' }}
+
+## Troubleshooting
+
+- **Role Assumption Issues** {{ className: 'lead' }}
+- **Permission Errors** {{ className: 'lead' }}
+- **Region Issues** {{ className: 'lead' }}
+
+## Getting Help
+
+[If you encounter issues during the AWS connection process:](#)
+
+- **Appmint Vibe Studio Support** {{ className: 'lead' }}
+    - Direct support channels {{ className: 'lead' }}
+    - Email: [support@appmintvibestudio.dev](mailto:support@appmintvibestudio.dev) {{ className: 'lead' }}
+    - Appmint Vibe Studio Discord community {{ className: 'lead' }}
+    - Detailed setup instructions in Connect Cloud page {{ className: 'lead' }}
+- **AWS Documentation** {{ className: 'lead' }}
+    - Additional AWS resources {{ className: 'lead' }}
+    - AWS IAM Roles Documentation {{ className: 'lead' }}
+    - AWS Regions and Availability Zones {{ className: 'lead' }}
+    - AWS Support for account-specific issues {{ className: 'lead' }}
+
+[**Next steps**:](#) After connecting your AWS account, you can deploy your application by clicking Deploy in your Appmint Vibe Studio project
+ and selecting your AWS environment. The first deployment typically takes 10-15 minutes as infrastructure is provisioned. {{ className: 'lead' }}

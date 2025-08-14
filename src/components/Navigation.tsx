@@ -235,11 +235,13 @@ export const navigation: Array<NavGroup> = [
     links: [
       { title: 'Introduction', href: '/' },
       { title: 'Quickstart', href: '/quickstart' },
-      { title: 'SDKs', href: '/sdks' },
-      { title: 'Authentication', href: '/authentication' },
-      { title: 'Pagination', href: '/pagination' },
-      { title: 'Errors', href: '/errors' },
-      { title: 'Webhooks', href: '/webhooks' },
+      { title: 'Monitoring & Observability', href: '/monitoring-observability' },
+      { title: 'Best Practices', href: '/best-practices' },
+      { title: 'Effective Prompting', href: '/effective-prompting' },
+      { title: 'Deployment', href: '/deployment' },
+      { title: 'Connect AWS', href: '/connect-aws-account' },
+      { title: 'Connect Google Cloud', href: '/google-cloud--account' },
+      { title: 'Integrations', href: '/integrations' },
     ],
   },
   {

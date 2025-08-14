@@ -1,0 +1,85 @@
+export const metadata = {
+  title: 'Best Practices',
+  description: "Best Practices"
+}
+
+# Best Practices
+
+##
+
+## Optimize token usage
+
+[How to work more efficiently and keep your costs down](#)
+
+Appmint Vibe Studio uses Anthropic’s Claude 4 Sonnet and Google’s Gemini models to power its AI. These models process tokens, which is defined by Anthropic as:{{ className: 'lead' }}
+
+The smallest individual units of a language model. A token can represent a word, part of a word, a character, or even a byte (especially in the case of Unicode).{{ className: 'lead' }}
+
+Each token comes with a cost, and Appmint Vibe Studio is billed by the AI providers for each token it uses.
+ This is why our paid plans are priced based on how many tokens you get in each plan.{{ className: 'lead' }}
+
+
+### How Appmint Vibe Studio uses tokens
+
+Tokens are consumed in three main ways when using Appmint Vibe Studio:{{ className: 'lead' }}
+
+- Messages between you and the AI.{{ className: 'lead' }}
+- The AI writing new code for your application.{{ className: 'lead' }}
+- The AI reading and analyzing your existing codebase, including any changes you’ve made.{{ className: 'lead' }}
+
+### How Appmint Vibe Studio optimizes token usage
+
+We’re always working to make Appmint Vibe Studio consume tokens in the most efficient way, and are investing heavily in building smart
+ logic and advanced tools for optimizing what context is passed to the AI and have it produce only relevant output.{{ className: 'lead' }}
+
+[This already includes strategies like:](#)
+
+- Only including relevant chat history and change history from the current open Change, not all historical context.{{ className: 'lead' }}
+- Controlling the AI output and focusing it on writing functional and efficient code.{{ className: 'lead' }}
+
+### Tips to reduce your token usage
+
+Here are some simple ways you can reduce token usage and improve performance:{{ className: 'lead' }}
+
+### Merge early and often
+
+When you first send a prompt in Appmint Vibe Studio, it creates a Change for the ongoing chat with the AI. You can think of this as a branch.{{ className: 'lead' }}
+
+Whenever you have accomplished an atomic implementation in your application, we recommend clicking Merge change and continuing with a new one. 
+You can think of this as merging a pull request.{{ className: 'lead' }}
+
+Merging early and often ensures the context passed to the AI is focused only on what is relevant for the changes you are currently working on.{{ className: 'lead' }}
+
+## Use Scope context
+
+If you have a large codebase, manually defining what part of the codebase is sent to the AI can be used to significantly optimize token usage. 
+Click Scope context in the prompt text area to select which files and folders are relevant to the change you are working on.{{ className: 'lead' }}
+
+**Example:** If you are asking the AI to only make UI changes on a specific page, use the Scope context feature to select the relevant page.{{ className: 'lead' }}
+
+### Avoid repeated “Fix with Appmint Vibe Studio” attempts
+
+Repeatedly clicking Fix with Appmint Vibe Studio can quickly consume unnecessary tokens. After an attempt, review the changes 
+and refine your next request if needed. Not every issue can be fixed automatically, without providing more context to the AI,
+so it’s often worth debugging the error or making manual edits if fixes fail.{{ className: 'lead' }}
+
+## Add error handling and logging
+
+If you’re stuck in an error loop, prompt Appmint Vibe Studio to add detailed logging and stronger error handling. 
+Appmint Vibe Studio is good at inserting useful logs at key steps, and these logs help the AI understand what’s going wrong
+ and allow it to respond with more precise fixes in future attempts.{{ className: 'lead' }}
+
+### Use the Undo functionality
+
+If something goes wrong, you can Undo the latest revision and return to the previous state without consuming any tokens. This is more efficient than asking the AI revert the change.{{ className: 'lead' }}
+
+Undoing a revision is permanent, there’s no redo, so make sure you’re ready before using it.{{ className: 'lead' }}
+
+### Use the Discard change functionality
+
+If you’ve made multiple revisions in a Change and you’re not happy with the result, you can revert to the 
+latest Merged change by clicking Discard change on the currently active Change. This returns your codebase to the previously 
+merged state without consuming any tokens. This is more efficient than asking the AI revert the latest changes.{{ className: 'lead' }}
+
+Discarding a change is permanent, there’s no un-discard, so make sure you’re ready before using it.{{ className: 'lead' }}
+

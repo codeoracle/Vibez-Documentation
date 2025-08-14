@@ -1,0 +1,131 @@
+export const metadata = {
+  title: 'Google Cloud Account',
+  description:
+    'In this guide, we will look at how to Google Cloud Account.',
+}
+
+# Google Cloud Account
+
+Deploy your Appmint Vibe Studio application to your own GCP account through Appmint Vibe Studio Cloud {{ className: 'lead' }}
+
+Connect your Google Cloud Platform account to Appmint Vibe Studio Cloud to deploy your Appmint Vibe Studio application 
+directly to your own GCP infrastructure. Appmint Vibe Studio provides a dedicated GCP Service Account for your application and guides you through the setup process. {{ className: 'lead' }}
+
+## Prerequisites
+
+1. **GCP Organization Access** {{ className: 'lead' }}
+    - Access to a GCP Organization account {{ className: 'lead' }}
+    - Organization Policy Administrator role (required for setup) {{ className: 'lead' }}
+    - Billing enabled on your GCP project {{ className: 'lead' }}
+    - Understanding of which GCP region you want to deploy to {{ className: 'lead' }}
+2. **Appmint Vibe Studio Application Ready** {{ className: 'lead' }}
+    - Your application built and tested with Appmint Vibe Studio {{ className: 'lead' }}
+    - Preview environment validated and working {{ className: 'lead' }}
+    - Ready to deploy to production infrastructure {{ className: 'lead' }}
+
+## Connection Process
+
+1. **Access the Connect Cloud page**{{ className: 'lead' }}
+
+[In your Appmint Vibe Studio project:](#)
+    - Go to the Appmint Vibe Studio Cloud dashboard{{ className: 'lead' }}
+    - Select your application{{ className: 'lead' }}
+    - Navigate to App Settings → Integrations → Connect Cloud {{ className: 'lead' }}
+    - Select Google Cloud Platform (GCP) {{ className: 'lead' }}
+2. **Get your App's Service Account**{{ className: 'lead' }}
+
+[Appmint Vibe Studio Cloud provides a unique GCP Service Account for your application:](#)
+    - Find your app’s Service Account email on the Connect Cloud page{{ className: 'lead' }}
+    - Copy this email address - you’ll need it for the next steps{{ className: 'lead' }}
+    - This Service Account will be used by Appmint Vibe Studio to provision infrastructure{{ className: 'lead' }}
+3. **Configure Domain Restricted Sharing**{{ className: 'lead' }}
+
+[Update your GCP Organization’s domain restricted sharing policy:](#)
+    - Add Appmint Vibe Studio Cloud to your allowed domains list {{ className: 'lead' }}
+    - Follow the specific instructions provided on the Connect Cloud page {{ className: 'lead' }}
+    - This allows Appmint Vibe Studio’s Service Account to access your organization**Permission required**: You need the Organization Policy Administrator role to modify this policy. {{ className: 'lead' }}
+4. **Grant Access to Appmint Vibe Studio Service Account**{{ className: 'lead' }}
+
+[Provide the necessary permissions to Appmint Vibe Studio’s Service Account:](#)
+    - Use the Service Account email from step 2 {{ className: 'lead' }}
+    - Follow the detailed permission instructions on the Connect Cloud page {{ className: 'lead' }}
+    - Grant access to provision infrastructure in your GCP project {{ className: 'lead' }}
+
+## Required Permissions
+
+- **Organization Policy Administrator Role** {{ className: 'lead' }}
+- **Service Account Permissions** {{ className: 'lead' }}
+
+## What Gets Deployed
+
+When you deploy to your GCP account through Appmint Vibe Studio Cloud, the following infrastructure is automatically provisioned: {{ className: 'lead' }}
+
+- **Compute & Networking** {{ className: 'lead' }}
+    - Cloud-native application hosting {{ className: 'lead' }}
+    - Google Cloud Run or Compute Engine services {{ className: 'lead' }}
+    - Load balancing and auto-scaling {{ className: 'lead' }}
+    - VPC and firewall configuration {{ className: 'lead' }}
+    - SSL certificates and domain management {{ className: 'lead' }}
+- **Data & Storage** {{ className: 'lead' }}
+    - Managed database and storage {{ className: 'lead' }}
+    - Cloud SQL for managed databases {{ className: 'lead' }}
+    - Cloud Storage for application assets {{ className: 'lead' }}
+    - Automated backups and maintenance {{ className: 'lead' }}
+    - Security and access controls {{ className: 'lead' }}
+- **Security & Identity** {{ className: 'lead' }}
+    - Enterprise security configuration {{ className: 'lead' }}
+    - IAM roles and service accounts {{ className: 'lead' }}
+    - Security policies and firewall rules {{ className: 'lead' }}
+    - Encryption at rest and in transit {{ className: 'lead' }}
+    - Network isolation and access controls {{ className: 'lead' }}
+- **Monitoring & Operations** {{ className: 'lead' }}
+    - Observability and management {{ className: 'lead' }}
+    - Cloud Monitoring integration {{ className: 'lead' }}
+    - Cloud Logging for centralized logs {{ className: 'lead' }}
+    - Integration with Appmint Vibe Studio’s monitoring {{ className: 'lead' }}
+    - Performance tracking and alerting {{ className: 'lead' }}
+
+## Managing Multiple GCP Accounts
+
+- **Account Selection** {{ className: 'lead' }}
+- **Organization Structure** {{ className: 'lead' }}
+- **Working with multiple GCP accounts** {{ className: 'lead' }}
+
+[If you have access to multiple GCP accounts:](#)
+    - Ensure you’re logged in with the correct account {{ className: 'lead' }}
+    - Verify the correct organization is selected in GCP Console {{ className: 'lead' }}
+    - Double-check you’re modifying policies for the right organization {{ className: 'lead' }}
+    - Use the account switcher in GCP Console if needed {{ className: 'lead' }}
+
+### Troubleshooting Common Issues
+
+- Cannot access/edit Domain Restricted Sharing policy {{ className: 'lead' }}
+- Cannot grant access to Appmint Vibe Studio Service Account {{ className: 'lead' }}
+- Appmint Vibe Studio Cloud returns 'Could not find Organization ID' {{ className: 'lead' }}
+- Permission errors during deployment {{ className: 'lead' }}
+
+## After Connection
+
+[Once you’ve successfully connected your GCP account:](#)
+
+1. **Verify Connection** {{ className: 'lead' }}
+    - Appmint Vibe Studio Cloud will test the connection to your GCP account {{ className: 'lead' }}
+    - You should see a success confirmation {{ className: 'lead' }}
+    - Your GCP account will appear as an available deployment target {{ className: 'lead' }}
+2. **Choose Deployment Region** {{ className: 'lead' }}
+    - Select which GCP region you want for your deployment: {{ className: 'lead' }}
+        - Consider latency to your users {{ className: 'lead' }}
+        - Review regional service availability {{ className: 'lead' }}
+        - Factor in compliance and data residency requirements {{ className: 'lead' }}
+        - Consider integration with existing GCP infrastructure {{ className: 'lead' }}
+3. **Deploy Your Application** {{ className: 'lead' }}
+    - Click Deploy in your Appmint Vibe Studio project {{ className: 'lead' }}
+    - Select your GCP environment {{ className: 'lead' }}
+    - Monitor the deployment progress in Appmint Vibe Studio Cloud dashboard {{ className: 'lead' }}
+    - First deployment typically takes 10-15 minutes {{ className: 'lead' }}
+
+### Important Notes
+
+- **Resource Management** {{ className: 'lead' }}
+- **Billing and Costs** {{ className: 'lead' }}
+- **Security and Compliance** {{ className: 'lead' }}

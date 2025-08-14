@@ -1,0 +1,188 @@
+export const metadata = {
+  title: 'Effective Prompting',
+  description:
+    'In this guide, we will look at how to work with Effective Prompting',
+}
+
+# Effective Prompting
+
+[How to craft effective prompts when working with Appmint Vibe Studio.](#)
+
+Appmint Vibe Studio is capable of building production-ready applications based on your instructions and specifications. Clear and detailed instructions, prompts, lead to better results.{{ className: 'lead' }}
+
+A prompt is what you write to tell the AI what you want it to do. Think of the AI like your engineering partner, 
+not an all-knowing oracle: it can only respond based on the information you give it.{{ className: 'lead' }}
+
+This guide will help you communicate effectively with Appmint Vibe Studio to get the results you want.{{ className: 'lead' }}
+
+## The Basics
+
+Be specific about what you’re building. The more details you provide, the better Appmint Vibe Studio can understand your vision.{{ className: 'lead' }}
+
+[Instead of:](#)
+
+```
+Build a todo app.
+
+```
+
+[Try:](#)
+
+```
+Build a task management app where users can create projects, add tasks with due dates,
+and assign them to team members.
+
+```
+
+[Describe your data. Mention the key entities in your application and how they relate to each other.](#)
+
+```
+Build a book review site where users can:
+- Rate books (1-5 stars)
+- Write reviews
+- See other users' reviews
+- Browse books by genre
+
+```
+
+Start simple, then iterate. Begin with core functionality and add complexity through follow-up prompts. Whenever you’ve completed a feature,
+ it’s good to use the Merge change feature to save your work and clear the chat.
+  This optimizes token usage and makes it easy to revert back to a working version of your app later on. {{ className: 'lead' }}
+
+## Real Examples That Work Well
+
+[Here’s a prompt that consistently produces great results:](#)
+
+```
+Build an expense tracking app where users can:
+- Log expenses with amounts, dates, and categories
+- See monthly spending summaries
+- Set budget limits for different categories
+- Get notifications when approaching budget limits
+
+```
+
+This works because it clearly defines the core features and data model without overwhelming Appmint Vibe Studio with implementation details.{{ className: 'lead' }}
+
+[For a backend-focused application:](#)
+
+```
+Build an API for a product inventory system with:
+- Product management (create, update, search)
+- Inventory tracking across multiple warehouses
+- Order processing that updates inventory levels
+- Low stock alerts
+
+```
+
+### Integrating with Third-Party Services
+
+[Appmint Vibe Studio can often easily integrate with popular third-party services. Simply mention them in your prompt:](#)
+
+```
+Build a newsletter platform that uses Resend for email delivery and Stripe for subscription payments.
+
+```
+
+**Some popular integrations that work well:**
+
+- Payment processing (Stripe, Polar){{ className: 'lead' }}
+- Email services (Resend, SendGrid){{ className: 'lead' }}
+- Authentication providers (Clerk, Auth0){{ className: 'lead' }}
+- Analytics tools (PostHog, Mixpanel){{ className: 'lead' }}
+
+[**Appmint Vibe Studio needs more context:**](#) AI is notoriously bad at recognizing what it doesn’t know. When working with lesser-known services,
+ Appmint Vibe Studio might hallucinate API endpoints or make assumptions based on common patterns that don’t actually apply.
+  If you notice Appmint Vibe Studio getting it wrong, it helps to copy relevant sections from the service’s documentation into your prompt.
+   This gives Appmint Vibe Studio the context it needs to generate accurate code.{{ className: 'lead' }}
+
+### Prompt Patterns to Follow
+
+[Start with the purpose: Begin by stating what the application is for.](#)
+
+```
+Build a platform for scheduling and managing fitness classes...
+
+```
+
+[List key features: Use bullet points for clarity.](#)
+
+```
+Users should be able to:
+- Book classes based on availability
+- Manage their bookings
+- Receive reminders before class
+
+```
+
+[Mention technical requirements only when necessary:](#)
+
+```
+The application should use PostgreSQL for data storage and include user authentication.
+
+```
+
+Keep in mind Appmint Vibe Studio can only implement supported technologies and will not be able to use arbitrary programming 
+languages and infrastructure. On the backend side, Appmint Vibe Studio uses Appmint Vibe Studio as the backend framework which 
+comes with native support for PostgreSQL, microservices, Pub/Sub, Object storage, and more. {{ className: 'lead' }}
+
+### How NOT to Prompt Appmint Vibe Studio
+
+Appmint Vibe Studio is designed to build applications based on clear, specific feature requests.
+ It’s not intended for general questions or vague feedback. To get the best results, describe exactly what
+  you want to build or fix, and include helpful context like user actions, expected behavior, error messages, logs, or screenshots. {{ className: 'lead' }}
+
+[These types of prompts won’t work well:](#)
+
+**INEFFECTIVE:**
+
+- Can you fix all the bugs in the application? {{ className: 'lead' }}
+- The login is broken. {{ className: 'lead' }}
+- Please review and test everything you’ve built.”Instead, be specific and provide context. {{ className: 'lead' }}
+
+**EFFECTIVE:**
+
+- Allow guests to start the checkout process without signing up for an account. {{ className: 'lead' }}
+- Fix the TypeError: Cannot read property ‘email’ of undefined shown in the console after submitting the login form. {{ className: 'lead' }}
+- Adjust the layout so that the cards are horizontally aligned on the index page (see screenshot attached). {{ className: 'lead' }}
+
+### When You Get Stuck
+
+If you’ve gotten stuck, it may be helpful to revert to your latest merged version by clicking Discard change. This clears the context and makes Appmint Vibe Studio more effective.{{ className: 'lead' }}
+
+[After reverting to your latest merged version, try these approaches to produce better results:](#)
+
+- Be more concrete. Provide specific examples of how features should work. {{ className: 'lead' }}
+- Simplify your request. Break complex applications into smaller pieces. {{ className: 'lead' }}
+- Ask for guidance. If you’re not sure how to describe something, Appmint Vibe Studio can help you structure your prompt better. {{ className: 'lead' }}
+
+### Sample Prompt Template
+
+[Here’s a template you can adapt for most applications:](#)
+
+```
+Build a [type of application] that helps users [solve this problem].
+
+Key functionality:
+- [Feature 1]
+- [Feature 2]
+- [Feature 3]
+
+The application should have:
+- [Any specific technical requirements]
+- [Any specific design requirements]
+
+```
+
+### A Note on Backend Features
+
+[Appmint Vibe Studio excels at building proper backend infrastructure. Don’t hesitate to request:](#)
+
+- Database schemas and migrations {{ className: 'lead' }}
+- API endpoints with proper error handling {{ className: 'lead' }}
+- Scheduled jobs {{ className: 'lead' }}
+- Event-driven architecture {{ className: 'lead' }}
+- Authentication and authorizationUnlike many AI tools that focus on frontends,
+ Appmint Vibe Studio can generate robust backend code that’s ready for production.{{ className: 'lead' }}
+ 
+ Remember that Appmint Vibe Studio is designed to handle complex requirements, but clear communication is key. Focus on what you want to build, not how you think it should be implemented, and Appmint Vibe Studio will handle the technical details. {{ className: 'lead' }}

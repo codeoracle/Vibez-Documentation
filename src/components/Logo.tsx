@@ -6,9 +6,9 @@ export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
     <Image
     src={logo}
     alt=""
-    width={Number(props.width) || 20}
-    height={Number(props.height) || 20}
-    className="h-12 w-12"
+    width={Number(props.width) || 12}
+    height={Number(props.height) || 12}
+    className="h-8 w-8"
   />
   
   )

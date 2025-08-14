@@ -6,93 +6,126 @@ export const metadata = {
 
 # Quickstart
 
-This guide will get you all set up and ready to use the Appmint API. We'll cover how to get started using one of our API clients and how to make your first API request. We'll also look at where to go next to find all the information you need to take full advantage of our powerful REST API. {{ className: 'lead' }}
+### Create a full-stack application with backend APIs, database, and cloud deployment in under 3 minutes. {{ className: 'lead' }}
 
-<Note>
-  Before you can make requests to the Appmint API, you will need to grab your
-  API key from your dashboard. You find it under [Settings &raquo; API](#).
-</Note>
 
-## Choose your client
+[Build a production app in 3 minutes](#) {{ className: 'lead' }}
 
-Before making your first API request, you need to pick which API client you will use. In addition to good ol' cURL HTTP requests, Appmint offers clients for JavaScript, Python, and PHP. In the following example, you can see how to install each client.
+This quickstart takes you from zero to a deployed, production-ready application in under 3 minutes. 
+You’ll build a movie recommendation API with real backend services, database integration, and live deployment. {{ className: 'lead' }}
 
-<CodeGroup>
+**Why a movie API?** It showcases real backend logic, database operations, external API integrations, and multiple service endpoints - everything you need for production applications. {{ className: 'lead' }}
 
-```bash {{ title: 'cURL' }}
-# cURL is most likely already installed on your machine
-curl --version
-```
-
-```bash {{ language: 'js' }}
-# Install the Appmint JavaScript SDK
-npm install @example/Appmint-api --save
-```
-
-```bash {{ language: 'python' }}
-# Install the Appmint Python SDK
-pip install Appmint_api
-```
-
-```bash {{ language: 'php' }}
-# Install the Appmint PHP SDK
-composer require Appmint/sdk
-```
-
-</CodeGroup>
+**Built on Appmint Vibe Studio:** Appmint Vibe Studio generates apps using Appmint Vibe Studio’s framework for type-safe distributed systems. Unlike other AI tools that just generate code snippets, 
+you get complete systems with APIs, databases, and infrastructure that actually work together. {{ className: 'lead' }}
 
 <div className="not-prose">
-  <Button href="/sdks" variant="text" arrow="right">
-    <>Check out our list of first-party SDKs</>
+  <Button href="#" variant="text" arrow="right">
+    <>Learn more </>
   </Button>
 </div>
 
-## Making your first API request
 
-After picking your preferred client, you are ready to make your first call to the Appmint API. Below, you can see how to send a GET request to the Conversations endpoint to get a list of all your conversations. In the cURL example, results are limited to ten conversations, the default page length for each client.
+## What you’ll build
 
-<CodeGroup tag="GET" label="/v1/conversations">
+[By the end of this guide, you’ll have:](#) {{ className: 'lead' }}
 
-```bash {{ title: 'cURL' }}
-curl -G https://api.Appmint.chat/v1/conversations \
-  -H "Authorization: Bearer {token}" \
-  -d limit=10
+- Backend API service with multiple endpoints {{ className: 'lead' }}
+- Database integration for storing movie data {{ className: 'lead' }}
+- External API integration with TMDB (The Movie Database) {{ className: 'lead' }}
+- Live architecture diagrams showing your system {{ className: 'lead' }}
+- Deployed application running on your cloud {{ className: 'lead' }}
+- GitHub repository with full source code {{ className: 'lead' }}
+
+
+
+## Generate your app
+[Describe what you want to build](#)
+
+In the chat interface, describe your system: {{ className: 'lead' }}
+
+```bash {{ title: 'Build a movie recommendation API service that:' }}
+- Gets popular movies from TMDB API
+- Stores user favorites in a database
+- Provides search functionality
+- Has endpoints for getting movie details
+- Includes user rating system
 ```
 
-```js
-import ApiClient from '@example/Appmint-api'
 
-const client = new ApiClient(token)
+# Watch Appmint Vibe Studio create your system
 
-await client.conversations.list()
+Appmint Vibe Studio generates your complete application in 30-60 seconds, including: {{ className: 'lead' }}
+
+- Backend services with type-safe APIs {{ className: 'lead' }}
+- Database schema for users and favorites {{ className: 'lead' }}
+- TMDB integration for movie data {{ className: 'lead' }}
+- Authentication endpoints {{ className: 'lead' }}
+- Rating and recommendation logic {{ className: 'lead' }}
+
+[Here’s what the generated code looks like:](#)
+```bash {{ title: '// movies/appmint.service.ts' }}
+import { api } from "appmint.vibe.studio/api";
+import { SQLDatabase } from "appmint.vibe.studio/storage/sqldb";
+
+const db = new SQLDatabase("movies", {
+  migrations: "./migrations",
+});
+
+export const search = api(
+  { method: "GET", path: "/movies/search" },
+  async ({ query }: { query: string }) => {
+    // Your movie search logic here
+    return await searchMovies(query);
+  }
+);
 ```
 
-```python
-from Appmint_api import ApiClient
-
-client = ApiClient(token)
-
-client.conversations.list()
-```
-
-```php
-$client = new \Appmint\ApiClient($token);
-
-$client->conversations->list();
-```
-
-</CodeGroup>
-
-<div className="not-prose">
-  <Button href="/conversations" variant="text" arrow="right">
-    <>Read the docs for the Conversations endpoint</>
+How it works: Each appmint.service.ts file defines your APIs and Appmint Vibe Studio automatically handles the HTTP endpoints,
+ database connections, and service communication. {{ className: 'lead' }}
+ 
+ <div className="not-prose">
+  <Button href="#" variant="text" arrow="right">
+    <>See how services work </>
   </Button>
 </div>
+  
+##
 
-## What's next?
 
-Great, you're now set up with an API client and have made your first request to the API. Here are a few links that might be handy as you venture further into the Appmint API:
+## Explore what you built
 
-- [Grab your API key from the Appmint dashboard](#)
-- [Check out the Conversations endpoint](/conversations)
-- [Learn about the different error messages in Appmint](/errors)
+Once generation completes, you’ll see several tabs: {{ className: 'lead' }}
+
+- **Code**: Your complete codebase 
+    - `movies/` - Main service with API endpoints {{ className: 'lead' }}
+    - `users/` - User management and authentication {{ className: 'lead' }}
+    - Database schemas and migrations {{ className: 'lead' }}
+    - Type-safe service communication {{ className: 'lead' }}
+- **Preview**
+- **Architecture**
+- **APIs**
+
+## 
+
+## Deploy your app
+
+[Deploy to Appmint Vibe Studio Cloud](#)
+
+Click Deploy and your app goes live in under 60 seconds with: {{ className: 'lead' }}
+
+- Automatic HTTPS and domain {{ className: 'lead' }}
+- Production database provisioning {{ className: 'lead' }}
+- Secrets management for API keys {{ className: 'lead' }}
+- Built-in monitoring and tracing {{ className: 'lead' }}
+
+### Connect to GitHub (optional)
+
+Click GitHub to: {{ className: 'lead' }}
+
+- Create a repository with your penting system that includes: {{ className: 'lead' }}
+- Real Backend Architecture {{ className: 'lead' }}
+- Production Features {{ className: 'lead' }}
+- Developer Workflow {{ className: 'lead' }}
+
+
