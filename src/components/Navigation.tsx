@@ -242,6 +242,9 @@ export const navigation: Array<NavGroup> = [
       { title: 'Connect AWS', href: '/connect-aws-account' },
       { title: 'Connect Google Cloud', href: '/google-cloud--account' },
       { title: 'Integrations', href: '/integrations' },
+      { title: 'Prisma ORM', href: '/prisma-orm' },
+      { title: 'Resend Integration', href: '/resend-integration' },
+      { title: 'Stripe Integration', href: '/stripe-integration' },
     ],
   },
   {
