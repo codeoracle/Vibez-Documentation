@@ -245,6 +245,10 @@ export const navigation: Array<NavGroup> = [
       { title: 'Prisma ORM', href: '/prisma-orm' },
       { title: 'Resend Integration', href: '/resend-integration' },
       { title: 'Stripe Integration', href: '/stripe-integration' },
+      { title: 'Tigris Integration', href: '/tigris-integration' },
+      { title: 'OpenAI Integration', href: '/openai-integration' },
+      { title: 'PostHog Integration', href: '/posthog-integration' },
+      { title: 'Other Integrations', href: '/other-integrations' },
     ],
   },
   {
